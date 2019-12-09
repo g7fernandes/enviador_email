@@ -12,7 +12,7 @@ from getpass import getpass
 
 
 
-def sendmail(fromaddr, toaddr, password, body,filename, s_smtp, port_smtp , cc='')
+def sendmail(fromaddr, toaddr, password, subject, body, filename, s_smtp, port_smtp , cc='')
     rcpt = cc.split(",") + toaddr.split(",") + [toaddr]
     # instance of MIMEMultipart 
     msg = MIMEMultipart() 
@@ -27,10 +27,7 @@ def sendmail(fromaddr, toaddr, password, body,filename, s_smtp, port_smtp , cc='
 
     
     # storing the subject  
-    msg['Subject'] = "Assunto teste"
-    
-    # string to store the body of the mail 
-    body = "Corpo do email blablablablabla\nblablablabla"
+    msg['Subject'] = subject
     
     # attach the body with the msg instance 
     msg.attach(MIMEText(body, 'plain')) 
@@ -84,7 +81,8 @@ s_smtp = input("Entre o servidor SMTP: (ex. Gmail: smtp.gmail.com ; Unicamp: smt
 port_smtp = input("Entre a porta de SMTP (Unicamp e Gmail: 587)\n")
 port_smtp = int(port_smtp)
 
-bodyf = input("Entre o caminho do aquivo de texto .txt com o corpo do email\n")
+subject = input("Entre o assunto do email\n")
+f = input("Entre o caminho do aquivo de texto .txt com o corpo do email\n")
 
 body_plain = ''
 with open(bodyf) as f:
@@ -95,7 +93,7 @@ with open(bodyf) as f:
 with open(adrfile) as f:
     for line in f:
         dest = line.split(',')
-            sendmail(fromaddr, dest[0], password, body_plain, dest[1], s_smtp, port_smtp)
+            sendmail(fromaddr, dest[0], password, subject, body_plain, dest[1], s_smtp, port_smtp)
         
         
         
