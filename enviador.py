@@ -93,9 +93,11 @@ with open(bodyf) as f:
 with open(adrfile) as f:
     for line in f:
         dest = line.split(',')
-            sendmail(fromaddr, dest[0], password, subject, body_plain, dest[1], s_smtp, port_smtp)
+        sendmail(fromaddr, dest[0], password, subject, body_plain, dest[1], s_smtp, port_smtp)
+        print("Email enviado para" + dest[0] + "\n")
         
-        
+            
+print("Concluído!")
         
 
 
