@@ -10,9 +10,7 @@ from email.mime.base import MIMEBase
 from email import encoders 
 from getpass import getpass
 
-#fromaddr = "g7fernandes@gmail.com"
-#toaddr = "gafernandesil@gmail.com"
-#cc = "thais.oliveira@inova.unicamp.br,thais.g.oliveira@outlook.com,gafernandesil@gmail.com"
+
 
 def sendmail(fromaddr, toaddr, password, body,filename, s_smtp, port_smtp , cc='')
     rcpt = cc.split(",") + toaddr.split(",") + [toaddr]
