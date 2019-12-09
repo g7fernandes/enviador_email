@@ -10,3 +10,5 @@ pessoa3@gmail,C:\\para\\arquivo\\no\\windows.png
 ```
 
 Atente que em Linux e Mac OS o caminho é com `/` e no Windows será com `\\`. 
+
+O corpo do arquivo pode ser escrito em um arquivo .txt que deverá ser entrado quando requerido. 
