@@ -12,7 +12,7 @@ from getpass import getpass
 
 
 
-def sendmail(fromaddr, toaddr, password, subject, body, filename, s_smtp, port_smtp , cc='')
+def sendmail(fromaddr, toaddr, password, subject, body, filename, s_smtp, port_smtp , cc=''):
     rcpt = cc.split(",") + toaddr.split(",") + [toaddr]
     # instance of MIMEMultipart 
     msg = MIMEMultipart() 
@@ -76,7 +76,7 @@ print("Se o aquivo estiver na mesma pasta do programa, será apenas o nome dele.
 fromaddr = input("Email do remetente:\n")
 print("Entre a senha para {}\n".format(fromaddr))
 password = getpass()
-adrfile = input("Caminho para o arquivo contendo os emails dos destinatários:\n ")
+adrfile = input("Caminho para o arquivo contendo os emails dos destinatários:\n")
 s_smtp = input("Entre o servidor SMTP: (ex. Gmail: smtp.gmail.com ; Unicamp: smtp.unicamp.br)\n")
 port_smtp = input("Entre a porta de SMTP (Unicamp e Gmail: 587)\n")
 port_smtp = int(port_smtp)
