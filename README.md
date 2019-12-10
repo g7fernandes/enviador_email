@@ -1,4 +1,4 @@
-# Enviador de Email
+# Enviador de Email com python
 
 Envia emails para uma lista de emails salva em .csv
 
